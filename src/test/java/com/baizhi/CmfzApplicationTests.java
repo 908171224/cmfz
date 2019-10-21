@@ -1,17 +1,30 @@
 package com.baizhi;
 
-import com.aliyuncs.exceptions.ClientException;
+/*import com.aliyuncs.exceptions.ClientException;*/
+
+import com.baizhi.ArticleRepsitory.ArticleRepsitory;
+import com.baizhi.entity.Article;
+import com.baizhi.mapper.ArticleMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.Date;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CmfzApplicationTests {
 
+    @Autowired
+    private ArticleMapper articleMapper;
+    @Autowired
+    private ArticleRepsitory articleRepsitory;
+
     @Test
-    public void contextLoads() throws ClientException {
+    public void contextLoads()/* throws ClientException */ {
         //设置超时时间-可自行调整
         /*System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
         System.setProperty("sun.net.client.defaultReadTimeout", "10000");
@@ -50,4 +63,29 @@ public class CmfzApplicationTests {
         }*/
     }
 
+    @Test
+    public void name() {
+        Article article = new Article();
+        article.setId("001");
+        article.setAuthor("杜甫");
+        article.setTitle("大风歌");
+        article.setContent("且将新火试新茶，诗酒趁年华");
+        article.setCreateDate(new Date());
+        article.setStatus("y");
+        articleRepsitory.save(article);
+    }
+
+    @Test
+    public void name2() {
+        List<Article> all = articleMapper.findAll();
+        for (Article a : all) {
+            /*article.setId(a.getId());
+            article.setAuthor(a.getAuthor());
+            article.setTitle(a.getTitle());
+            article.setContent(a.getContent());
+            article.setCreateDate(a.getCreateDate());
+            article.setStatus(a.getStatus());*/
+            articleRepsitory.save(a);
+        }
+    }
 }

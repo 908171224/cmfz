@@ -180,7 +180,7 @@
             </div>
             <!--模态页脚-->
             <div class="modal-footer" id="modal_footer">
-                <%--<button type="button" class="btn btn-primary">保存bubu假按揭</button>
+                <%--<button type="button" class="btn btn-primary">保存</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>--%>
             </div>
         </div>
