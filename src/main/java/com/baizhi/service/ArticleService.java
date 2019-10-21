@@ -2,6 +2,7 @@ package com.baizhi.service;
 
 import com.baizhi.entity.Article;
 
+import java.util.List;
 import java.util.Map;
 
 public interface ArticleService {
@@ -11,4 +12,6 @@ public interface ArticleService {
     public void add(Article article);
 
     public void update(Article article);
+
+    public List<Article> queryByes(String val);
 }
