@@ -46,7 +46,7 @@ public class CmfzApplicationTests {
         //请求失败这里会抛ClientException异常
         SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);
         if(sendSmsResponse.getCode() != null && sendSmsResponse.getCode().equals("OK")) {
-            //请求成功
+            //请求成功哈哈
         }*/
     }
 
